@@ -47,9 +47,8 @@
         android:layout_marginTop="16dp"
         android:text="@string/authentication_unlock_button"
         app:icon="@drawable/ic_unlock"
+        app:layout_constraintStart_toStartOf="@+id/textfield_input_password"
         app:layout_constraintEnd_toStartOf="@+id/iconbutton_fingerprint"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textfield_input_password" />
 
     <Button
@@ -59,7 +58,7 @@
         android:layout_height="wrap_content"
         app:icon="@drawable/ic_fingerprint"
         app:layout_constraintBottom_toBottomOf="@+id/button_unlock"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textfield_input_password"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_unlock" />
 
