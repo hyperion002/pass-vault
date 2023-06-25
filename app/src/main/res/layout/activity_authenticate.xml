@@ -7,6 +7,16 @@
     tools:context=".ui.AuthenticateActivity">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_marginBottom="64dp"
+        android:textAppearance="?attr/textAppearanceDisplaySmall"
+        app:layout_constraintBottom_toTopOf="@+id/textview_authentication_instruction"
+        app:layout_constraintEnd_toEndOf="@+id/textview_authentication_instruction"
+        app:layout_constraintStart_toStartOf="@+id/textview_authentication_instruction" />
+
+    <TextView
         android:id="@+id/textview_authentication_instruction"
         android:layout_width="245dp"
         android:layout_height="wrap_content"
