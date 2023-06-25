@@ -1,313 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.HomeFragment">
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/progress_password_health"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:indicatorColor="?attr/colorPrimary"
-        app:indicatorSize="250dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:trackColor="?attr/colorSurfaceVariant"
-        app:trackCornerRadius="35dp"
-        app:trackThickness="50dp"
-        tools:max="100"
-        tools:progress="59" />
-
-    <TextView
-        android:id="@+id/text_step_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceDisplayMedium"
-        android:textColor="?attr/colorOnSurface"
-        app:layout_constraintBottom_toBottomOf="@+id/progress_password_health"
-        app:layout_constraintEnd_toEndOf="@+id/progress_password_health"
-        app:layout_constraintStart_toStartOf="@+id/progress_password_health"
-        app:layout_constraintTop_toTopOf="@+id/progress_password_health"
-        tools:text="59 %" />
-
-    <LinearLayout
-        android:id="@+id/layout_first"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_password_health">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_total"
-            style="?attr/materialCardViewElevatedStyle"
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_password_health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:indicatorColor="?attr/colorPrimary"
+            app:indicatorSize="250dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackColor="?attr/colorSurfaceVariant"
+            app:trackCornerRadius="35dp"
+            app:trackThickness="50dp"
+            tools:max="100"
+            tools:progress="59" />
+
+        <TextView
+            android:id="@+id/text_step_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceDisplayMedium"
+            android:textColor="?attr/colorOnSurface"
+            app:layout_constraintBottom_toBottomOf="@+id/progress_password_health"
+            app:layout_constraintEnd_toEndOf="@+id/progress_password_health"
+            app:layout_constraintStart_toStartOf="@+id/progress_password_health"
+            app:layout_constraintTop_toTopOf="@+id/progress_password_health"
+            tools:text="59 %" />
+
+        <LinearLayout
+            android:id="@+id/layout_first"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progress_password_health">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_total"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/colorTertiaryContainer">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view_total"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/shape_circle"
+                        android:backgroundTint="?attr/colorTertiary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_total"
+                        app:layout_constraintEnd_toEndOf="@+id/view_total"
+                        app:layout_constraintStart_toStartOf="@+id/view_total"
+                        app:layout_constraintTop_toTopOf="@+id/view_total"
+                        app:srcCompat="@drawable/ic_total"
+                        app:tint="?attr/colorOnTertiary" />
+
+                    <TextView
+                        android:id="@+id/text_total_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintStart_toEndOf="@+id/view_total"
+                        app:layout_constraintTop_toTopOf="@+id/view_total"
+                        tools:text="17" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        app:layout_constraintStart_toStartOf="@+id/text_total_count"
+                        app:layout_constraintTop_toBottomOf="@+id/text_total_count" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_weak"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/colorErrorContainer">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view_weak"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/shape_circle"
+                        android:backgroundTint="?attr/colorError"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_weak"
+                        app:layout_constraintEnd_toEndOf="@+id/view_weak"
+                        app:layout_constraintStart_toStartOf="@+id/view_weak"
+                        app:layout_constraintTop_toTopOf="@+id/view_weak"
+                        app:srcCompat="@drawable/ic_weak"
+                        app:tint="?attr/colorOnError" />
+
+                    <TextView
+                        android:id="@+id/text_weak_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintStart_toEndOf="@+id/view_weak"
+                        app:layout_constraintTop_toTopOf="@+id/view_weak"
+                        tools:text="4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/weak"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        app:layout_constraintStart_toStartOf="@+id/text_weak_count"
+                        app:layout_constraintTop_toBottomOf="@+id/text_weak_count" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_second"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="?attr/colorTertiaryContainer">
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/layout_first"
+            app:layout_constraintStart_toStartOf="@+id/layout_first"
+            app:layout_constraintTop_toBottomOf="@+id/layout_first">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_safe"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/colorSecondaryContainer">
 
-                <View
-                    android:id="@+id/view_total"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/shape_circle"
-                    android:backgroundTint="?attr/colorTertiary"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:importantForAccessibility="no"
-                    app:layout_constraintBottom_toBottomOf="@+id/view_total"
-                    app:layout_constraintEnd_toEndOf="@+id/view_total"
-                    app:layout_constraintStart_toStartOf="@+id/view_total"
-                    app:layout_constraintTop_toTopOf="@+id/view_total"
-                    app:srcCompat="@drawable/ic_total"
-                    app:tint="?attr/colorOnTertiary" />
+                    <View
+                        android:id="@+id/view_safe"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/shape_circle"
+                        android:backgroundTint="?attr/colorSecondary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/text_total_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
-                    app:layout_constraintStart_toEndOf="@+id/view_total"
-                    app:layout_constraintTop_toTopOf="@+id/view_total"
-                    tools:text="17" />
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_safe"
+                        app:layout_constraintEnd_toEndOf="@+id/view_safe"
+                        app:layout_constraintStart_toStartOf="@+id/view_safe"
+                        app:layout_constraintTop_toTopOf="@+id/view_safe"
+                        app:srcCompat="@drawable/ic_safe"
+                        app:tint="?attr/colorOnSecondary" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/total"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    app:layout_constraintStart_toStartOf="@+id/text_total_count"
-                    app:layout_constraintTop_toBottomOf="@+id/text_total_count" />
+                    <TextView
+                        android:id="@+id/text_safe_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintStart_toEndOf="@+id/view_safe"
+                        app:layout_constraintTop_toTopOf="@+id/view_safe"
+                        tools:text="17" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/safe"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        app:layout_constraintStart_toStartOf="@+id/text_safe_count"
+                        app:layout_constraintTop_toBottomOf="@+id/text_safe_count" />
 
-        </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_weak"
-            style="?attr/materialCardViewElevatedStyle"
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_reused"
+                style="?attr/materialCardViewElevatedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/colorPrimaryContainer">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/view_reused"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/shape_circle"
+                        android:backgroundTint="?attr/colorPrimary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:importantForAccessibility="no"
+                        app:layout_constraintBottom_toBottomOf="@+id/view_reused"
+                        app:layout_constraintEnd_toEndOf="@+id/view_reused"
+                        app:layout_constraintStart_toStartOf="@+id/view_reused"
+                        app:layout_constraintTop_toTopOf="@+id/view_reused"
+                        app:srcCompat="@drawable/ic_reused"
+                        app:tint="?attr/colorOnPrimary" />
+
+                    <TextView
+                        android:id="@+id/text_reused_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintStart_toEndOf="@+id/view_reused"
+                        app:layout_constraintTop_toTopOf="@+id/view_reused"
+                        tools:text="4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reused"
+                        android:textAppearance="?attr/textAppearanceBodySmall"
+                        app:layout_constraintStart_toStartOf="@+id/text_reused_count"
+                        app:layout_constraintTop_toBottomOf="@+id/text_reused_count" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_recently_added"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/recently_added"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_second" />
+
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="?attr/colorErrorContainer">
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/layout_second"
+            app:layout_constraintStart_toStartOf="@+id/layout_second"
+            app:layout_constraintTop_toBottomOf="@+id/text_recently_added" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <View
-                    android:id="@+id/view_weak"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/shape_circle"
-                    android:backgroundTint="?attr/colorError"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:importantForAccessibility="no"
-                    app:layout_constraintBottom_toBottomOf="@+id/view_weak"
-                    app:layout_constraintEnd_toEndOf="@+id/view_weak"
-                    app:layout_constraintStart_toStartOf="@+id/view_weak"
-                    app:layout_constraintTop_toTopOf="@+id/view_weak"
-                    app:srcCompat="@drawable/ic_weak"
-                    app:tint="?attr/colorOnError" />
-
-                <TextView
-                    android:id="@+id/text_weak_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
-                    app:layout_constraintStart_toEndOf="@+id/view_weak"
-                    app:layout_constraintTop_toTopOf="@+id/view_weak"
-                    tools:text="4" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/weak"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    app:layout_constraintStart_toStartOf="@+id/text_weak_count"
-                    app:layout_constraintTop_toBottomOf="@+id/text_weak_count" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_second"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/layout_first"
-        app:layout_constraintStart_toStartOf="@+id/layout_first"
-        app:layout_constraintTop_toBottomOf="@+id/layout_first">
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_safe"
-            style="?attr/materialCardViewElevatedStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="?attr/colorSecondaryContainer">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <View
-                    android:id="@+id/view_safe"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/shape_circle"
-                    android:backgroundTint="?attr/colorSecondary"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:importantForAccessibility="no"
-                    app:layout_constraintBottom_toBottomOf="@+id/view_safe"
-                    app:layout_constraintEnd_toEndOf="@+id/view_safe"
-                    app:layout_constraintStart_toStartOf="@+id/view_safe"
-                    app:layout_constraintTop_toTopOf="@+id/view_safe"
-                    app:srcCompat="@drawable/ic_safe"
-                    app:tint="?attr/colorOnSecondary" />
-
-                <TextView
-                    android:id="@+id/text_safe_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
-                    app:layout_constraintStart_toEndOf="@+id/view_safe"
-                    app:layout_constraintTop_toTopOf="@+id/view_safe"
-                    tools:text="17" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/safe"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    app:layout_constraintStart_toStartOf="@+id/text_safe_count"
-                    app:layout_constraintTop_toBottomOf="@+id/text_safe_count" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_reused"
-            style="?attr/materialCardViewElevatedStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:backgroundTint="?attr/colorPrimaryContainer">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <View
-                    android:id="@+id/view_reused"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp"
-                    android:background="@drawable/shape_circle"
-                    android:backgroundTint="?attr/colorPrimary"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:importantForAccessibility="no"
-                    app:layout_constraintBottom_toBottomOf="@+id/view_reused"
-                    app:layout_constraintEnd_toEndOf="@+id/view_reused"
-                    app:layout_constraintStart_toStartOf="@+id/view_reused"
-                    app:layout_constraintTop_toTopOf="@+id/view_reused"
-                    app:srcCompat="@drawable/ic_reused"
-                    app:tint="?attr/colorOnPrimary" />
-
-                <TextView
-                    android:id="@+id/text_reused_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:textAppearance="?attr/textAppearanceTitleMedium"
-                    app:layout_constraintStart_toEndOf="@+id/view_reused"
-                    app:layout_constraintTop_toTopOf="@+id/view_reused"
-                    tools:text="4" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/reused"
-                    android:textAppearance="?attr/textAppearanceBodySmall"
-                    app:layout_constraintStart_toStartOf="@+id/text_reused_count"
-                    app:layout_constraintTop_toBottomOf="@+id/text_reused_count" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/text_recently_added"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/jetbrains_mono_semibold"
-        android:text="@string/recently_added"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_second" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/layout_second"
-        app:layout_constraintStart_toStartOf="@+id/layout_second"
-        app:layout_constraintTop_toBottomOf="@+id/text_recently_added" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
