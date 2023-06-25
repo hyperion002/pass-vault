@@ -1,17 +1,36 @@
 <resources>
+
+    <!--AuthenticationActivity resources-->
     <string name="app_name">Pass Vault</string>
     <string name="authentication_instruction">Welcome to PassVault. \nEnter password to continue!</string>
     <string name="authentication_password">Password</string>
     <string name="authentication_helper_text">At least 6 characters</string>
     <string name="authentication_unlock_button">Unlock</string>
+
+    <!--BottomAppBar resources-->
     <string name="home">Home</string>
     <string name="vault">Vault</string>
     <string name="tools">Tools</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--HomeFragment resources-->
     <string name="total">Total</string>
     <string name="weak">Weak</string>
     <string name="safe">Safe</string>
     <string name="reused">Reused</string>
     <string name="recently_added">Recently Added</string>
+
+    <!--ToolsFragment resources-->
+    <string name="length">Length</string>
+    <string name="options">Options</string>
+    <string name="numbers">Numbers</string>
+    <string name="letters">Letters</string>
+    <string name="symbols">Symbols</string>
+    <string name="copy">Copy</string>
+    <string name="refresh">Refresh</string>
+    <string name="password">Password</string>
+
+    <!--TopAppBar labels-->
+    <string name="password_list">Password List</string>
+    <string name="generate_password">Generate Password</string>
+    <string name="dashboard">Dashboard</string>
 </resources>
